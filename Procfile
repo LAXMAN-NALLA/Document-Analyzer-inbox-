@@ -1,0 +1,1 @@
+web: gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000 --timeout 3600 --keep-alive 300 --max-requests 1000 --max-requests-jitter 50 --worker-connections 1000 --preload --graceful-timeout 30 --limit-request-line 4094 --limit-request-fields 100 --limit-request-field_size 8190
